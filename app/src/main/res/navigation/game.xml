@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game"
+    app:startDestination="@id/formGameScreen">
+
+    <fragment
+        android:id="@+id/formGameScreen"
+        android:name="com.fizzbuzz.app.presentation.game.form.FormGameFragment"
+        android:label="Game"
+        tools:layout="@layout/fragment_form_game">
+        <action
+            android:id="@+id/action_formGameFragment_to_resultGameFragment"
+            app:destination="@id/resultGameScreen" />
+
+        <argument
+            android:name="fizzBuzz"
+            app:argType="com.fizzbuzz.app.data.model.FizzBuzz" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultGameScreen"
+        android:name="com.fizzbuzz.app.presentation.game.result.ResultGameFragment"
+        android:label="Result"
+        tools:layout="@layout/fragment_result_game">
+
+        <argument
+            android:name="fizzBuzz"
+            app:argType="com.fizzbuzz.app.data.model.FizzBuzz" />
+
+    </fragment>
+</navigation>
